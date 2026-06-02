@@ -57,8 +57,8 @@ def calculate_track_kpis(df: pd.DataFrame) -> dict[str, Any]:
 
     # Popularity
     avg_popularity = _safe_mean(df.get("popularity", pd.Series(dtype=float)))
-    max_popularity = int(df["popularity"].max()) if "popularity" in df.columns else 0
-    min_popularity = int(df["popularity"].min()) if "popularity" in df.columns else 0
+    max_popularity = int(df["popularity"].max()) if "popularity" in df.columns and df["popularity"].notna().any() else 0
+    min_popularity = int(df["popularity"].min()) if "popularity" in df.columns and df["popularity"].notna().any() else 0
 
     # Duration
     avg_duration_ms = _safe_mean(df.get("duration_ms", pd.Series(dtype=float)), 0)

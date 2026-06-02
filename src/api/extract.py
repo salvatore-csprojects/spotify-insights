@@ -57,18 +57,21 @@ def extract_top_tracks(time_range: str) -> pd.DataFrame:
 
     df = pd.DataFrame(rows)
 
-    # ── Join audio features ────────────────────────────────────────────────
+    # ── Join audio features (endpoint deprecated for new apps — skip on 403) ──
     track_ids = df["track_id"].tolist()
-    audio_feats = client.audio_features(track_ids)
-    if audio_feats:
-        feat_df = pd.DataFrame(audio_feats).rename(columns={"id": "track_id"})
-        feat_cols = [
-            "track_id", "danceability", "energy", "key", "loudness", "mode",
-            "speechiness", "acousticness", "instrumentalness", "liveness",
-            "valence", "tempo", "time_signature",
-        ]
-        feat_df = feat_df[[c for c in feat_cols if c in feat_df.columns]]
-        df = df.merge(feat_df, on="track_id", how="left")
+    try:
+        audio_feats = client.audio_features(track_ids)
+        if audio_feats:
+            feat_df = pd.DataFrame(audio_feats).rename(columns={"id": "track_id"})
+            feat_cols = [
+                "track_id", "danceability", "energy", "key", "loudness", "mode",
+                "speechiness", "acousticness", "instrumentalness", "liveness",
+                "valence", "tempo", "time_signature",
+            ]
+            feat_df = feat_df[[c for c in feat_cols if c in feat_df.columns]]
+            df = df.merge(feat_df, on="track_id", how="left")
+    except Exception as e:
+        logger.warning("Audio features unavailable (skipping): %s", e)
 
     logger.info(
         "Extracted %d top tracks for %s (%.0f%% with audio features)",

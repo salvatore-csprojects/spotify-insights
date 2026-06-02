@@ -62,33 +62,73 @@ footer { visibility: hidden; }
 
 /* ── KPI cards ────────────────────────────────────────── */
 .kpi-card {
-    background: #181818;
+    background: linear-gradient(145deg, #1c1c1c 0%, #181818 100%);
     border: 1px solid #282828;
-    border-radius: 12px;
-    padding: 20px 24px;
-    transition: border-color 0.2s;
+    border-radius: 16px;
+    padding: 22px 24px;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+.kpi-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #1DB954 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.2s;
 }
 .kpi-card:hover {
     border-color: #1DB954;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(29,185,84,0.08);
+}
+.kpi-card:hover::after {
+    opacity: 1;
 }
 .kpi-label {
-    font-size: 11px;
-    font-weight: 500;
+    font-size: 10px;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     color: #535353;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 .kpi-value {
-    font-size: 32px;
-    font-weight: 600;
+    font-size: 34px;
+    font-weight: 700;
     color: #ffffff;
     line-height: 1;
+    letter-spacing: -0.5px;
+}
+.kpi-value.na {
+    font-size: 26px;
+    color: #535353;
 }
 .kpi-sub {
-    font-size: 12px;
+    font-size: 11px;
     color: #535353;
-    margin-top: 6px;
+    margin-top: 8px;
+    letter-spacing: 0.02em;
+}
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px;
+    color: #535353;
+    text-align: center;
+}
+.empty-state-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+    opacity: 0.4;
+}
+.empty-state-text {
+    font-size: 13px;
+    line-height: 1.6;
 }
 
 /* ── Insight cards ────────────────────────────────────── */
@@ -371,23 +411,36 @@ st.markdown(
 # ── KPI Row 1 ──────────────────────────────────────────────────────────────────
 col1, col2, col3, col4, col5 = st.columns(5)
 
-def kpi_card(col, label: str, value: str, sub: str = "") -> None:
+def kpi_card(col, label: str, value: str, sub: str = "", na: bool = False) -> None:
+    val_class = "kpi-value na" if na else "kpi-value"
     col.markdown(
         f"""
         <div class="kpi-card">
             <div class="kpi-label">{label}</div>
-            <div class="kpi-value">{value}</div>
+            <div class="{val_class}">{value}</div>
             {"<div class='kpi-sub'>" + sub + "</div>" if sub else ""}
         </div>
         """,
         unsafe_allow_html=True,
     )
 
+avg_pop = kpis.get("avg_popularity", 0)
+pop_display = f"{avg_pop:.0f}" if avg_pop > 0 else "N/A"
+pop_sub = "out of 100" if avg_pop > 0 else "not available"
+
+mood_arch = mood.get("archetype", "—")
+if mood_arch == "Unknown":
+    mood_display, mood_sub_text, mood_na = "—", "no audio features", True
+else:
+    mood_display = mood_arch
+    mood_sub_text = f"v:{mood.get('avg_valence',0):.2f}  e:{mood.get('avg_energy',0):.2f}"
+    mood_na = False
+
 kpi_card(col1, "Tracks Analyzed", str(kpis.get("total_tracks", 0)))
 kpi_card(col2, "Unique Artists", str(kpis.get("unique_artists", 0)))
-kpi_card(col3, "Avg Popularity", f"{kpis.get('avg_popularity', 0):.0f}", "out of 100")
+kpi_card(col3, "Avg Popularity", pop_display, pop_sub, na=(avg_pop == 0))
 kpi_card(col4, "Diversity Score", f"{diversity.get('score', 0):.2f}", diversity.get("label", ""))
-kpi_card(col5, "Mood", mood.get("archetype", "—"), f"v:{mood.get('avg_valence',0):.2f} e:{mood.get('avg_energy',0):.2f}")
+kpi_card(col5, "Mood", mood_display, mood_sub_text, na=mood_na)
 
 st.markdown("<br>", unsafe_allow_html=True)
 
@@ -434,9 +487,11 @@ with tab1:
             st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
 
     with col_right:
-        st.markdown('<div class="section-header">Popularity Tiers</div>', unsafe_allow_html=True)
         pop_dist = kpis.get("popularity_distribution", {})
-        if pop_dist:
+        has_pop_data = pop_dist and any(v > 0 for v in pop_dist.values())
+
+        if has_pop_data:
+            st.markdown('<div class="section-header">Popularity Tiers</div>', unsafe_allow_html=True)
             fig2 = go.Figure(
                 go.Pie(
                     labels=list(pop_dist.keys()),
@@ -450,29 +505,56 @@ with tab1:
             fig2.update_layout(
                 paper_bgcolor="rgba(0,0,0,0)",
                 plot_bgcolor="rgba(0,0,0,0)",
-                legend=dict(
-                    font=dict(color="#b3b3b3", size=11),
-                    bgcolor="rgba(0,0,0,0)",
-                    x=0,
-                ),
+                legend=dict(font=dict(color="#b3b3b3", size=11), bgcolor="rgba(0,0,0,0)", x=0),
                 margin=dict(l=0, r=0, t=0, b=0),
                 height=380,
                 font=dict(color="#b3b3b3"),
-                annotations=[
-                    dict(
-                        text=f"avg<br><b style='font-size:18px'>{kpis.get('avg_popularity', 0):.0f}</b>",
-                        x=0.5, y=0.5,
-                        font_size=12,
-                        showarrow=False,
-                        font_color="#ffffff",
-                    )
-                ],
+                annotations=[dict(
+                    text=f"avg<br><b style='font-size:18px'>{avg_pop:.0f}</b>",
+                    x=0.5, y=0.5, font_size=12, showarrow=False, font_color="#ffffff",
+                )],
             )
             st.plotly_chart(fig2, use_container_width=True, config={"displayModeBar": False})
+        else:
+            st.markdown('<div class="section-header">Top Genres</div>', unsafe_allow_html=True)
+            if not artists_df.empty and "genres" in artists_df.columns:
+                from collections import Counter
+                all_genres = [
+                    g.strip()
+                    for row in artists_df["genres"].dropna()
+                    for g in str(row).split(",")
+                    if g.strip() and g.strip() != "nan"
+                ]
+                top_genres = Counter(all_genres).most_common(8)
+                if top_genres:
+                    genre_df = pd.DataFrame(top_genres, columns=["genre", "count"])
+                    fig_g = px.bar(
+                        genre_df, x="count", y="genre", orientation="h",
+                        color="count", color_continuous_scale=["#1a1a1a", "#1DB954"],
+                        template=PLOTLY_TEMPLATE,
+                    )
+                    fig_g.update_layout(
+                        paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
+                        coloraxis_showscale=False,
+                        yaxis=dict(categoryorder="total ascending"),
+                        margin=dict(l=0, r=0, t=0, b=0), height=380,
+                        font=dict(color="#b3b3b3", size=12),
+                        xaxis=dict(gridcolor="#1a1a1a", title=""),
+                        yaxis_title="",
+                    )
+                    st.plotly_chart(fig_g, use_container_width=True, config={"displayModeBar": False})
+            else:
+                st.markdown('<div class="empty-state"><div class="empty-state-icon">🎵</div><div class="empty-state-text">Genre data not available</div></div>', unsafe_allow_html=True)
 
     # ── Popularity vs Energy scatter ──────────────────────────────────────
     st.markdown('<div class="section-header">Popularity × Energy Landscape</div>', unsafe_allow_html=True)
-    if "popularity" in df.columns and "energy" in df.columns:
+    has_scatter_data = (
+        "popularity" in df.columns and "energy" in df.columns
+        and df["popularity"].notna().any() and df["energy"].notna().any()
+    )
+    if not has_scatter_data:
+        st.markdown('<div class="empty-state"><div class="empty-state-icon">📊</div><div class="empty-state-text">Audio features (energy, danceability) are not available<br>for apps created after November 2024 on Spotify\'s API.</div></div>', unsafe_allow_html=True)
+    if has_scatter_data and "popularity" in df.columns and "energy" in df.columns:
         scatter_df = df.copy()
         if "danceability" in scatter_df.columns:
             scatter_df["marker_size"] = scatter_df["danceability"] * 20 + 5
@@ -542,113 +624,126 @@ with tab2:
     from src.analytics.kpis import calculate_audio_profile
     import plotly.graph_objects as go
 
-    audio_profile = calculate_audio_profile(df)
+    has_audio = any(f in df.columns and df[f].notna().any() for f in ["energy", "valence", "danceability"])
 
-    st.markdown('<div class="section-header">Audio Feature Radar</div>', unsafe_allow_html=True)
+    if not has_audio:
+        st.markdown("""
+        <div style="background:#181818; border:1px solid #282828; border-left:3px solid #535353;
+                    border-radius:0 12px 12px 0; padding:32px 28px; margin:8px 0 24px;">
+            <div style="font-size:10px; text-transform:uppercase; letter-spacing:0.12em; color:#535353; margin-bottom:10px;">Audio Features</div>
+            <div style="font-size:16px; color:#b3b3b3; font-weight:500; margin-bottom:8px;">Not available for this app</div>
+            <div style="font-size:13px; color:#535353; line-height:1.7;">
+                Spotify deprecated the <code style="background:#0d0d0d; padding:2px 6px; border-radius:4px; color:#1DB954;">/audio-features</code>
+                endpoint for apps created after November 2024.<br>
+                Danceability, energy, valence, tempo and related features are no longer accessible via the API.<br><br>
+                The Overview, Evolution and Insights tabs work fully with your real listening data.
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+    else:
+        audio_profile = calculate_audio_profile(df)
 
-    radar_features = ["danceability", "energy", "valence", "acousticness",
-                      "speechiness", "instrumentalness", "liveness"]
-    radar_vals = [audio_profile.get(f, 0) for f in radar_features]
-    radar_vals_closed = radar_vals + [radar_vals[0]]
-    radar_labels = [f.capitalize() for f in radar_features] + [radar_features[0].capitalize()]
+        st.markdown('<div class="section-header">Audio Feature Radar</div>', unsafe_allow_html=True)
 
-    fig_radar = go.Figure()
-    fig_radar.add_trace(go.Scatterpolar(
-        r=radar_vals_closed,
-        theta=radar_labels,
-        fill="toself",
-        fillcolor="rgba(29, 185, 84, 0.15)",
-        line=dict(color="#1DB954", width=2),
-        name=time_label,
-    ))
-    fig_radar.update_layout(
-        polar=dict(
-            radialaxis=dict(
-                visible=True, range=[0, 1],
-                gridcolor="#282828", color="#535353",
-                tickfont=dict(size=10, color="#535353"),
+        radar_features = ["danceability", "energy", "valence", "acousticness",
+                          "speechiness", "instrumentalness", "liveness"]
+        radar_vals = [audio_profile.get(f, 0) for f in radar_features]
+        radar_vals_closed = radar_vals + [radar_vals[0]]
+        radar_labels = [f.capitalize() for f in radar_features] + [radar_features[0].capitalize()]
+
+        fig_radar = go.Figure()
+        fig_radar.add_trace(go.Scatterpolar(
+            r=radar_vals_closed,
+            theta=radar_labels,
+            fill="toself",
+            fillcolor="rgba(29, 185, 84, 0.15)",
+            line=dict(color="#1DB954", width=2),
+            name=time_label,
+        ))
+        fig_radar.update_layout(
+            polar=dict(
+                radialaxis=dict(visible=True, range=[0, 1], gridcolor="#282828",
+                                color="#535353", tickfont=dict(size=10, color="#535353")),
+                angularaxis=dict(gridcolor="#282828", color="#535353"),
+                bgcolor="rgba(0,0,0,0)",
             ),
-            angularaxis=dict(gridcolor="#282828", color="#535353"),
-            bgcolor="rgba(0,0,0,0)",
-        ),
-        paper_bgcolor="rgba(0,0,0,0)",
-        font=dict(color="#b3b3b3"),
-        height=450,
-        showlegend=False,
-        margin=dict(l=60, r=60, t=40, b=40),
-    )
-    col_r1, col_r2, col_r3 = st.columns([1.5, 1, 1])
-    with col_r1:
-        st.plotly_chart(fig_radar, use_container_width=True, config={"displayModeBar": False})
+            paper_bgcolor="rgba(0,0,0,0)",
+            font=dict(color="#b3b3b3"),
+            height=450,
+            showlegend=False,
+            margin=dict(l=60, r=60, t=40, b=40),
+        )
+        col_r1, col_r2, col_r3 = st.columns([1.5, 1, 1])
+        with col_r1:
+            st.plotly_chart(fig_radar, use_container_width=True, config={"displayModeBar": False})
 
-    with col_r2:
-        st.markdown('<div class="section-header">Feature Breakdown</div>', unsafe_allow_html=True)
-        for feat in radar_features:
-            val = audio_profile.get(feat, 0)
+        with col_r2:
+            st.markdown('<div class="section-header">Feature Breakdown</div>', unsafe_allow_html=True)
+            for feat in radar_features:
+                val = audio_profile.get(feat, 0)
+                st.markdown(
+                    f"""
+                    <div style="margin-bottom:12px;">
+                        <div style="display:flex; justify-content:space-between; font-size:12px; color:#b3b3b3; margin-bottom:4px;">
+                            <span>{feat.capitalize()}</span>
+                            <span style="color:#1DB954;">{val:.2f}</span>
+                        </div>
+                        <div style="height:4px; background:#1a1a1a; border-radius:2px;">
+                            <div style="width:{val*100:.0f}%; height:4px; background:#1DB954; border-radius:2px;"></div>
+                        </div>
+                    </div>
+                    """,
+                    unsafe_allow_html=True,
+                )
+
+        with col_r3:
+            st.markdown('<div class="section-header">Mood Archetype</div>', unsafe_allow_html=True)
+            arch = mood.get("archetype", "—")
+            arch_emojis = {
+                "Euphoria Mode": "🔥",
+                "Dark Intensity": "🌑",
+                "Sunday Chill": "☀️",
+                "Introspective": "🌧️",
+                "Balanced Flow": "⚖️",
+            }
             st.markdown(
                 f"""
-                <div style="margin-bottom:12px;">
-                    <div style="display:flex; justify-content:space-between; font-size:12px; color:#b3b3b3; margin-bottom:4px;">
-                        <span>{feat.capitalize()}</span>
-                        <span style="color:#1DB954;">{val:.2f}</span>
-                    </div>
-                    <div style="height:4px; background:#1a1a1a; border-radius:2px;">
-                        <div style="width:{val*100:.0f}%; height:4px; background:#1DB954; border-radius:2px;"></div>
+                <div class="kpi-card" style="text-align:center; padding:32px 16px;">
+                    <div style="font-size:48px; margin-bottom:12px;">{arch_emojis.get(arch, "🎵")}</div>
+                    <div style="font-size:20px; font-weight:600; color:#ffffff; margin-bottom:8px;">{arch}</div>
+                    <div style="font-size:12px; color:#535353;">
+                        Valence {mood.get('avg_valence', 0):.2f} · Energy {mood.get('avg_energy', 0):.2f}
                     </div>
                 </div>
                 """,
                 unsafe_allow_html=True,
             )
 
-    with col_r3:
-        st.markdown('<div class="section-header">Mood Archetype</div>', unsafe_allow_html=True)
-        arch = mood.get("archetype", "—")
-        arch_emojis = {
-            "Euphoria Mode": "🔥",
-            "Dark Intensity": "🌑",
-            "Sunday Chill": "☀️",
-            "Introspective": "🌧️",
-            "Balanced Flow": "⚖️",
-        }
-        st.markdown(
-            f"""
-            <div class="kpi-card" style="text-align:center; padding:32px 16px;">
-                <div style="font-size:48px; margin-bottom:12px;">{arch_emojis.get(arch, "🎵")}</div>
-                <div style="font-size:20px; font-weight:600; color:#ffffff; margin-bottom:8px;">{arch}</div>
-                <div style="font-size:12px; color:#535353;">
-                    Valence {mood.get('avg_valence', 0):.2f} · Energy {mood.get('avg_energy', 0):.2f}
-                </div>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-
-    # ── Feature distribution histograms ───────────────────────────────────
-    st.markdown("<br>", unsafe_allow_html=True)
-    st.markdown('<div class="section-header">Feature Distributions</div>', unsafe_allow_html=True)
-    hist_features = ["valence", "energy", "danceability", "acousticness"]
-    hist_cols = st.columns(4)
-    for i, feat in enumerate(hist_features):
-        if feat in df.columns:
-            with hist_cols[i]:
-                fig_h = px.histogram(
-                    df, x=feat, nbins=20,
-                    template=PLOTLY_TEMPLATE,
-                    color_discrete_sequence=["#1DB954"],
-                    title=feat.capitalize(),
-                )
-                fig_h.update_layout(
-                    paper_bgcolor="rgba(0,0,0,0)",
-                    plot_bgcolor="rgba(0,0,0,0)",
-                    height=180,
-                    showlegend=False,
-                    margin=dict(l=0, r=0, t=30, b=0),
-                    font=dict(color="#b3b3b3", size=10),
-                    xaxis=dict(gridcolor="#1a1a1a", title=""),
-                    yaxis=dict(gridcolor="#1a1a1a", title="", visible=False),
-                    title_font_size=12,
-                )
-                st.plotly_chart(fig_h, use_container_width=True, config={"displayModeBar": False})
+        st.markdown("<br>", unsafe_allow_html=True)
+        st.markdown('<div class="section-header">Feature Distributions</div>', unsafe_allow_html=True)
+        hist_features = ["valence", "energy", "danceability", "acousticness"]
+        hist_cols = st.columns(4)
+        for i, feat in enumerate(hist_features):
+            if feat in df.columns:
+                with hist_cols[i]:
+                    fig_h = px.histogram(
+                        df, x=feat, nbins=20,
+                        template=PLOTLY_TEMPLATE,
+                        color_discrete_sequence=["#1DB954"],
+                        title=feat.capitalize(),
+                    )
+                    fig_h.update_layout(
+                        paper_bgcolor="rgba(0,0,0,0)",
+                        plot_bgcolor="rgba(0,0,0,0)",
+                        height=180,
+                        showlegend=False,
+                        margin=dict(l=0, r=0, t=30, b=0),
+                        font=dict(color="#b3b3b3", size=10),
+                        xaxis=dict(gridcolor="#1a1a1a", title=""),
+                        yaxis=dict(gridcolor="#1a1a1a", title="", visible=False),
+                        title_font_size=12,
+                    )
+                    st.plotly_chart(fig_h, use_container_width=True, config={"displayModeBar": False})
 
 # ============================================================
 # TAB 3: EVOLUTION

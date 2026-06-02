@@ -82,14 +82,9 @@ class SpotifyClient:
         logger.debug("Fetching top artists: time_range=%s limit=%d", time_range, limit)
         return self._sp.current_user_top_artists(time_range=time_range, limit=limit)
 
-    @retry(
-        retry=retry_if_exception_type(spotipy.SpotifyException),
-        wait=wait_exponential(multiplier=1, min=2, max=30),
-        stop=stop_after_attempt(4),
-        reraise=True,
-    )
     def audio_features(self, track_ids: list[str]) -> list[dict]:
-        """Batch audio feature fetch — handles Spotify's 100-item limit."""
+        """Batch audio feature fetch — handles Spotify's 100-item limit.
+        Note: endpoint deprecated for apps created after Nov 2024; raises on 403."""
         results = []
         for i in range(0, len(track_ids), 100):
             batch = track_ids[i : i + 100]
@@ -97,7 +92,7 @@ class SpotifyClient:
             batch_result = self._sp.audio_features(batch)
             if batch_result:
                 results.extend([f for f in batch_result if f is not None])
-            time.sleep(0.1)  # Gentle throttle
+            time.sleep(0.1)
         return results
 
     @retry(

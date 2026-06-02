@@ -1,11 +1,33 @@
-rank,artist,genres,popularity,followers
-1,Frank Ocean,"r&b, neo soul, indie",88,39016601
-2,J. Cole,"hip-hop, conscious rap",88,27432167
-3,Tame Impala,"psychedelic pop, indie rock",85,16217422
-4,Travis Scott,"hip-hop, trap, psychedelic",93,73120437
-5,The Weeknd,"r&b, pop, synthpop",92,16064686
-6,"Tyler, the Creator","hip-hop, alternative rap",89,45898034
-7,Mac Miller,"hip-hop, alternative rap",85,74671004
-8,Arctic Monkeys,"indie rock, garage rock",86,40194679
-9,SZA,"r&b, pop, neo soul",90,39144737
-10,Kendrick Lamar,"hip-hop, conscious rap",91,46555937
+rank,artist_id,artist_name,genres,popularity,followers,external_url,image_url,time_range,extracted_at,followers_fmt,primary_genre
+1,3TVXtAsR1Inumwj472S9r4,Drake,,,,https://open.spotify.com/artist/3TVXtAsR1Inumwj472S9r4,https://i.scdn.co/image/ab6761610000e5eb4293385d324db8558179afd9,short_term,2026-06-02T21:59:57.483076+00:00,nan,
+2,4tgNxPUJKyOY0VkbzJ44iE,Yk It’s Junaa,,,,https://open.spotify.com/artist/4tgNxPUJKyOY0VkbzJ44iE,https://i.scdn.co/image/ab6761610000e5ebc3dc5418257a0f0ba2e2baf9,short_term,2026-06-02T21:59:57.483114+00:00,nan,
+3,3E12tRURRvPfHz0hAMCFYc,Omar Courtz,,,,https://open.spotify.com/artist/3E12tRURRvPfHz0hAMCFYc,https://i.scdn.co/image/ab6761610000e5ebd317f301a85fd77964d94b4d,short_term,2026-06-02T21:59:57.483125+00:00,nan,
+4,6nVcHLIgY5pE2YCl8ubca1,JHAYCO,,,,https://open.spotify.com/artist/6nVcHLIgY5pE2YCl8ubca1,https://i.scdn.co/image/ab6761610000e5eb21907ce45d02176645072c22,short_term,2026-06-02T21:59:57.483134+00:00,nan,
+5,1mcTU81TzQhprhouKaTkpq,Rauw Alejandro,,,,https://open.spotify.com/artist/1mcTU81TzQhprhouKaTkpq,https://i.scdn.co/image/ab6761610000e5eb6d72db3fd29576caa9cb821f,short_term,2026-06-02T21:59:57.483143+00:00,nan,
+6,6QoAK6MFPyiqmoTdFTsjlh,Loui Santana,,,,https://open.spotify.com/artist/6QoAK6MFPyiqmoTdFTsjlh,https://i.scdn.co/image/ab6761610000e5eb34d7cb77b7673d4419e98393,short_term,2026-06-02T21:59:57.483152+00:00,nan,
+7,7iK8PXO48WeuP03g8YR51W,Myke Towers,,,,https://open.spotify.com/artist/7iK8PXO48WeuP03g8YR51W,https://i.scdn.co/image/ab6761610000e5eb8372345609bebaf1e948ef7f,short_term,2026-06-02T21:59:57.483160+00:00,nan,
+8,3hfWiirwdO1ijoZQwj7uzZ,Lil Naay,,,,https://open.spotify.com/artist/3hfWiirwdO1ijoZQwj7uzZ,https://i.scdn.co/image/ab6761610000e5ebc7d566b03971f86fa70d29de,short_term,2026-06-02T21:59:57.483168+00:00,nan,
+9,5XJDexmWFLWOkjOEjOVX3e,Eladio Carrion,,,,https://open.spotify.com/artist/5XJDexmWFLWOkjOEjOVX3e,https://i.scdn.co/image/ab6761610000e5ebd90909bf6bca9886c1578a4e,short_term,2026-06-02T21:59:57.483175+00:00,nan,
+10,0Q8NcsJwoCbZOHHW63su5S,Mora,,,,https://open.spotify.com/artist/0Q8NcsJwoCbZOHHW63su5S,https://i.scdn.co/image/ab6761610000e5ebe6252cc367480d8fe43e711f,short_term,2026-06-02T21:59:57.483183+00:00,nan,
+11,0Y5tJX1MQlPlqiwlOH1tJY,Travis Scott,,,,https://open.spotify.com/artist/0Y5tJX1MQlPlqiwlOH1tJY,https://i.scdn.co/image/ab6761610000e5eb19c2790744c792d05570bb71,short_term,2026-06-02T21:59:57.483190+00:00,nan,
+12,78F6Xkd46aMHkr4AP60TXY,Clarent,,,,https://open.spotify.com/artist/78F6Xkd46aMHkr4AP60TXY,https://i.scdn.co/image/ab6761610000e5eb3aef25748d7a0883142f0dc1,short_term,2026-06-02T21:59:57.483206+00:00,nan,
+13,6TKygPpVT29oGUogu4J9Ec,Yan Block,,,,https://open.spotify.com/artist/6TKygPpVT29oGUogu4J9Ec,https://i.scdn.co/image/ab6761610000e5eb1da4b46f64bb40d556b5684f,short_term,2026-06-02T21:59:57.483213+00:00,nan,
+14,4cnOWlaCqpRNGiLvsxgKgu,Ronny GTA,,,,https://open.spotify.com/artist/4cnOWlaCqpRNGiLvsxgKgu,https://i.scdn.co/image/ab6761610000e5ebdcc4e23b47830cc68b887228,short_term,2026-06-02T21:59:57.483221+00:00,nan,
+15,6wMr4zKPrrR0UVz08WtUWc,Black Coffee,,,,https://open.spotify.com/artist/6wMr4zKPrrR0UVz08WtUWc,https://i.scdn.co/image/ab6761610000e5eb980bed716b6784a79aabf00e,short_term,2026-06-02T21:59:57.483229+00:00,nan,
+16,7aG8YUI5alfF2pi0n5Cg5H,Kris Floyd,,,,https://open.spotify.com/artist/7aG8YUI5alfF2pi0n5Cg5H,https://i.scdn.co/image/ab6761610000e5ebd2ef28a8aa5d71f39db649a8,short_term,2026-06-02T21:59:57.483237+00:00,nan,
+17,4q3ewBCX7sLwd24euuV69X,Bad Bunny,,,,https://open.spotify.com/artist/4q3ewBCX7sLwd24euuV69X,https://i.scdn.co/image/ab6761610000e5eb81f47f44084e0a09b5f0fa13,short_term,2026-06-02T21:59:57.483244+00:00,nan,
+18,2R21vXR83lH98kGeO99Y66,Anuel AA,,,,https://open.spotify.com/artist/2R21vXR83lH98kGeO99Y66,https://i.scdn.co/image/ab6761610000e5eba23ceb177745632b517cb7b2,short_term,2026-06-02T21:59:57.483253+00:00,nan,
+19,0GM7qgcRCORpGnfcN2tCiB,Tainy,,,,https://open.spotify.com/artist/0GM7qgcRCORpGnfcN2tCiB,https://i.scdn.co/image/ab6761610000e5eba0d42a558309507a6a3b3311,short_term,2026-06-02T21:59:57.483260+00:00,nan,
+20,1URnnhqYAYcrqrcwql10ft,21 Savage,,,,https://open.spotify.com/artist/1URnnhqYAYcrqrcwql10ft,https://i.scdn.co/image/ab6761610000e5eb4f8f76117470957c0e81e5b2,short_term,2026-06-02T21:59:57.483281+00:00,nan,
+21,2dHbjVgpO3NvzY8D7yZvji,Donaty,,,,https://open.spotify.com/artist/2dHbjVgpO3NvzY8D7yZvji,https://i.scdn.co/image/ab6761610000e5eb138aca21f9ab1f8701aaaeaa,short_term,2026-06-02T21:59:57.483289+00:00,nan,
+22,2hlmm7s2ICUX0LVIhVFlZQ,Gunna,,,,https://open.spotify.com/artist/2hlmm7s2ICUX0LVIhVFlZQ,https://i.scdn.co/image/ab6761610000e5eba998bc86f87b9fe7e2466110,short_term,2026-06-02T21:59:57.483296+00:00,nan,
+23,4etuCZVdP8yiNPn4xf0ie5,Julio Iglesias,,,,https://open.spotify.com/artist/4etuCZVdP8yiNPn4xf0ie5,https://i.scdn.co/image/ab6761610000e5ebeb26b397cfc1d5b785296cdd,short_term,2026-06-02T21:59:57.483303+00:00,nan,
+24,1f7FtdbdaRjeeOr0gK9f3L,Luis Brown,,,,https://open.spotify.com/artist/1f7FtdbdaRjeeOr0gK9f3L,https://i.scdn.co/image/ab6761610000e5ebd134c694009a96fde4f6529b,short_term,2026-06-02T21:59:57.483311+00:00,nan,
+25,1RyvyyTE3xzB2ZywiAwp0i,Future,,,,https://open.spotify.com/artist/1RyvyyTE3xzB2ZywiAwp0i,https://i.scdn.co/image/ab6761610000e5eb7565b356bc9d9394eefa2ccb,short_term,2026-06-02T21:59:57.483319+00:00,nan,
+26,0DiYoKuXAI3xAA5JiU5UFX,Ezzy R,,,,https://open.spotify.com/artist/0DiYoKuXAI3xAA5JiU5UFX,https://i.scdn.co/image/ab6761610000e5eb1a1e028cf74408480e2534da,short_term,2026-06-02T21:59:57.483327+00:00,nan,
+27,2oQX8QiMXOyuqbcZEFsZfm,El Alfa,,,,https://open.spotify.com/artist/2oQX8QiMXOyuqbcZEFsZfm,https://i.scdn.co/image/ab6761610000e5ebebc38443c371677783ebd465,short_term,2026-06-02T21:59:57.483335+00:00,nan,
+28,2sRNZXIG2iwA17lHJjBP9P,Maiky Pailon,,,,https://open.spotify.com/artist/2sRNZXIG2iwA17lHJjBP9P,https://i.scdn.co/image/ab67616d0000b273b07c014b12f34bd37f28a632,short_term,2026-06-02T21:59:57.483343+00:00,nan,
+29,4aSlfXDn9R60UlbZEboBUy,YOVNGCHIMI,,,,https://open.spotify.com/artist/4aSlfXDn9R60UlbZEboBUy,https://i.scdn.co/image/ab6761610000e5eb73fab5be14367649f157af42,short_term,2026-06-02T21:59:57.483350+00:00,nan,
+30,6kq4GHwUcUojGIu0ziSNXf,Amenazzy,,,,https://open.spotify.com/artist/6kq4GHwUcUojGIu0ziSNXf,https://i.scdn.co/image/ab6761610000e5eb44d8d8c4aae6566154253895,short_term,2026-06-02T21:59:57.483358+00:00,nan,
+31,08yYd8o1CrOjIpGHP2I6zU,Huan62,,,,https://open.spotify.com/artist/08yYd8o1CrOjIpGHP2I6zU,https://i.scdn.co/image/ab6761610000e5ebd8e2ea3a0b4c3877d5ae436f,short_term,2026-06-02T21:59:57.483365+00:00,nan,
+32,4Ge9GwmWnOQsohwPTrXyHc,Gordo,,,,https://open.spotify.com/artist/4Ge9GwmWnOQsohwPTrXyHc,https://i.scdn.co/image/ab6761610000e5eb1d9da120103e6a8550163f17,short_term,2026-06-02T21:59:57.483373+00:00,nan,

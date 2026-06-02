@@ -1,51 +1,51 @@
-rank,track_name,artist,album,release_date,popularity,duration_ms,explicit,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,time_signature
-1,Nights,Frank Ocean,Blonde,2016-08-20,82,307960,True,0.508,0.418,1,-9.6,0,0.066,0.103,0.001,0.131,0.238,109.0,4
-2,Chanel,Frank Ocean,Blonde,2017-03-11,77,231986,True,0.416,0.481,7,-10.5,0,0.046,0.124,0.001,0.126,0.289,149.0,4
-3,Sweet Life,Frank Ocean,channel ORANGE,2012-07-17,76,244880,False,0.562,0.534,7,-10.2,1,0.046,0.053,0.0,0.104,0.698,93.0,4
-4,Snooze,SZA,SOS,2022-12-09,87,201160,False,0.661,0.535,6,-7.9,1,0.044,0.029,0.0,0.196,0.596,110.0,4
-5,DNA.,Kendrick Lamar,DAMN.,2017-04-14,87,185946,True,0.612,0.878,11,-5.6,0,0.196,0.009,0.0,0.079,0.488,142.0,4
-6,Holocene,Bon Iver,"Bon Iver, Bon Iver",2011-06-17,78,353733,False,0.269,0.224,7,-13.4,1,0.023,0.7,0.04,0.086,0.246,100.0,4
-7,Love Yourz,J. Cole,2014 Forest Hills Drive,2014-12-09,83,233960,False,0.591,0.499,0,-8.6,1,0.04,0.196,0.0,0.1,0.546,89.0,4
-8,Circles,Mac Miller,Circles,2020-01-17,82,210826,False,0.592,0.456,0,-8.1,1,0.03,0.274,0.001,0.1,0.556,121.0,4
-9,Blessed,Daniel Caesar,Freudian,2017-08-25,77,270947,False,0.608,0.563,5,-7.7,1,0.022,0.213,0.0,0.184,0.571,117.0,4
-10,R U Mine?,Arctic Monkeys,AM,2013-09-09,85,201760,False,0.442,0.907,7,-4.4,1,0.044,0.019,0.0,0.088,0.212,129.0,4
-11,Skinny,Bon Iver,"i,i",2019-08-30,71,254266,False,0.294,0.217,5,-14.3,1,0.034,0.641,0.006,0.08,0.152,74.0,4
-12,Save Your Tears,The Weeknd,After Hours,2020-08-21,89,215626,False,0.666,0.82,0,-5.4,1,0.05,0.024,0.0,0.094,0.644,118.0,4
-13,Best Part,Daniel Caesar,Freudian,2017-08-25,83,214773,False,0.604,0.439,11,-8.9,1,0.048,0.207,0.0,0.114,0.596,97.0,4
-14,Die For You,The Weeknd,Starboy,2016-11-25,91,260506,False,0.541,0.554,7,-7.6,1,0.029,0.012,0.0,0.117,0.379,122.0,4
-15,The Less I Know the Better,Tame Impala,Currents,2015-07-17,87,216680,False,0.727,0.671,9,-7.4,0,0.033,0.019,0.0,0.13,0.632,116.0,4
-16,Goosebumps,Travis Scott,Birds in the Trap Sing McKnight,2016-09-02,88,243773,True,0.818,0.72,4,-5.1,1,0.113,0.001,0.0,0.073,0.4,130.0,4
-17,Laugh Now Cry Later,Drake,Laugh Now Cry Later,2020-08-14,85,257413,True,0.822,0.726,9,-5.2,1,0.063,0.001,0.0,0.218,0.643,148.0,4
-18,Wishing Well,Teyana Taylor,K.T.S.E.,2018-06-22,68,211000,False,0.532,0.564,4,-8.4,0,0.091,0.116,0.0,0.177,0.438,126.0,4
-19,Let It Happen,Tame Impala,Currents,2015-07-17,83,467267,False,0.571,0.749,2,-6.8,1,0.022,0.118,0.001,0.219,0.449,133.0,4
-20,Can't Feel My Face,The Weeknd,Beauty Behind the Madness,2015-07-08,88,213746,False,0.7,0.718,0,-5.5,1,0.044,0.002,0.0,0.084,0.582,134.0,4
-21,New Magic Wand,"Tyler, the Creator",IGOR,2019-05-17,75,174813,True,0.53,0.747,4,-5.7,0,0.1,0.006,0.0,0.076,0.188,115.0,4
-22,One Dance,Drake,Views,2016-04-05,88,173987,False,0.791,0.625,1,-6.5,1,0.073,0.0,0.0,0.127,0.831,104.0,4
-23,Starboy,The Weeknd,Starboy,2016-11-25,87,230453,True,0.679,0.585,7,-7.0,0,0.268,0.001,0.0,0.134,0.459,186.0,4
-24,Blinding Lights,The Weeknd,After Hours,2019-11-29,95,200040,False,0.514,0.73,1,-5.9,1,0.066,0.0,0.0,0.095,0.334,171.0,4
-25,ELEMENT.,Kendrick Lamar,DAMN.,2017-04-14,83,210600,True,0.725,0.609,9,-7.0,0,0.083,0.01,0.0,0.222,0.32,90.0,4
-26,505,Arctic Monkeys,Favourite Worst Nightmare,2007-04-23,84,253000,False,0.393,0.61,5,-7.2,1,0.028,0.1,0.01,0.121,0.267,140.0,4
-27,Get You,Daniel Caesar,Pilgrim's Paradise,2017-01-13,79,262893,False,0.427,0.371,2,-11.3,1,0.038,0.503,0.0,0.142,0.526,82.0,4
-28,Do I Wanna Know?,Arctic Monkeys,AM,2013-09-09,88,272394,False,0.537,0.621,0,-6.7,1,0.03,0.089,0.002,0.09,0.261,85.0,4
-29,GOLD,BROCKHAMPTON,SATURATION,2017-06-09,69,183893,True,0.814,0.738,4,-5.1,1,0.22,0.001,0.0,0.193,0.601,128.0,4
-30,God's Plan,Drake,Scorpion,2018-01-19,90,198973,True,0.754,0.449,1,-9.4,1,0.109,0.0,0.0,0.101,0.357,77.0,4
-31,Ivy,Frank Ocean,Blonde,2016-08-20,80,248587,False,0.325,0.396,2,-11.8,1,0.033,0.367,0.001,0.244,0.32,82.0,4
-32,Dang!,Mac Miller,The Divine Feminine,2016-09-16,76,230173,False,0.8,0.541,5,-8.0,1,0.04,0.039,0.0,0.224,0.717,95.0,4
-33,Flume,Bon Iver,"For Emma, Forever Ago",2008-07-08,74,234560,False,0.235,0.192,4,-15.6,1,0.028,0.815,0.062,0.12,0.213,86.0,4
-34,See You Again,"Tyler, the Creator",Flower Boy,2017-07-21,81,238040,False,0.568,0.418,9,-9.7,1,0.052,0.136,0.001,0.147,0.612,110.0,4
-35,Middle Child,J. Cole,Middle Child,2019-01-23,84,243400,True,0.82,0.67,0,-6.5,1,0.063,0.046,0.0,0.077,0.35,92.0,4
-36,HIGHEST IN THE ROOM,Travis Scott,HIGHEST IN THE ROOM,2019-10-04,86,159054,True,0.722,0.496,2,-7.5,0,0.091,0.113,0.0,0.098,0.296,142.0,4
-37,SUGAR,BROCKHAMPTON,SATURATION II,2017-07-21,72,189640,True,0.837,0.745,0,-4.7,1,0.273,0.001,0.0,0.063,0.741,105.0,4
-38,No Role Modelz,J. Cole,2014 Forest Hills Drive,2014-12-09,86,293387,True,0.69,0.603,5,-7.3,1,0.075,0.072,0.0,0.132,0.506,149.0,4
-39,Kill Bill,SZA,SOS,2022-12-09,89,153906,False,0.671,0.573,0,-6.5,1,0.06,0.014,0.0,0.18,0.528,90.0,4
-40,This Is America,Childish Gambino,This Is America,2018-05-11,83,234000,True,0.671,0.464,5,-9.1,1,0.099,0.024,0.0,0.184,0.315,95.0,4
-41,Eventually,Tame Impala,Currents,2015-07-17,80,318800,False,0.62,0.531,5,-9.5,1,0.027,0.258,0.001,0.07,0.49,89.0,4
-42,HUMBLE.,Kendrick Lamar,DAMN.,2017-04-14,90,177000,True,0.904,0.621,7,-6.2,0,0.104,0.0,0.0,0.108,0.421,150.0,4
-43,Good Days,SZA,Good Days,2020-12-25,84,278013,False,0.538,0.524,6,-9.3,0,0.048,0.162,0.0,0.196,0.545,117.0,4
-44,Pyramids,Frank Ocean,channel ORANGE,2012-07-17,79,539397,True,0.619,0.502,11,-9.4,0,0.081,0.026,0.005,0.097,0.292,119.0,4
-45,Self Care,Mac Miller,Swimming,2018-07-26,80,277546,True,0.656,0.392,5,-11.8,0,0.23,0.104,0.0,0.162,0.389,80.0,4
-46,EARFQUAKE,"Tyler, the Creator",IGOR,2019-05-17,83,195360,False,0.714,0.462,0,-9.3,1,0.06,0.094,0.0,0.113,0.469,78.0,4
-47,3005,Childish Gambino,Because the Internet,2013-12-10,81,243014,True,0.6,0.479,9,-7.0,1,0.059,0.125,0.0,0.173,0.47,101.0,4
-48,Swim Good,Frank Ocean,"nostalgia,ULTRA",2011-09-21,73,222293,False,0.439,0.482,0,-9.8,0,0.064,0.071,0.001,0.098,0.315,100.0,4
-49,Redbone,Childish Gambino,"Awaken, My Love!",2016-12-02,86,326853,False,0.617,0.482,10,-10.0,0,0.031,0.106,0.0,0.091,0.508,96.0,4
-50,SICKO MODE,Travis Scott,ASTROWORLD,2018-08-03,92,312820,True,0.835,0.73,8,-3.6,0,0.225,0.001,0.0,0.124,0.446,155.0,4
+rank,track_id,track_name,artist,artist_id,all_artists,album,album_id,release_date,popularity,duration_ms,explicit,external_url,preview_url,time_range,extracted_at,duration_min,release_year,era,popularity_category
+1,21syhl9aagHDATZqFHkfjD,LOVE,Clarent,78F6Xkd46aMHkr4AP60TXY,Clarent,No vuelve a suceder (calentamiento pre álbum),13w7ZVbjnSHgp6xEER3KJB,2026-01-08,,172800,True,https://open.spotify.com/track/21syhl9aagHDATZqFHkfjD,,medium_term,2026-06-02T21:59:56.757572+00:00,2.88,2026,2020s,Unknown
+2,5kcUyHYlkslvtvsUDcuX3e,4life,Kris Floyd,7aG8YUI5alfF2pi0n5Cg5H,Kris Floyd,29 (Mixtape),2PEFU8wUp6740B4TR1LNfz,2024-10-29,,135649,True,https://open.spotify.com/track/5kcUyHYlkslvtvsUDcuX3e,,medium_term,2026-06-02T21:59:56.757624+00:00,2.26,2024,2020s,Unknown
+3,4HyPxBQDLUnY3w7gukITrW,ROSITA,Tainy,0GM7qgcRCORpGnfcN2tCiB,"Tainy, Rauw Alejandro, JHAYCO",ROSITA,3kU2wmmT1ix5kSHtNm1rFD,2026-02-19,,245469,True,https://open.spotify.com/track/4HyPxBQDLUnY3w7gukITrW,,medium_term,2026-06-02T21:59:56.757636+00:00,4.09,2026,2020s,Unknown
+4,2WcmMJtgzA6SOgL8eysBcU,Queen,Kris Floyd,7aG8YUI5alfF2pi0n5Cg5H,Kris Floyd,En Lo Que Vuelvo (Mixtape),7D0o5zdQSlzpDzqGcOE4ow,2024-06-12,,160082,True,https://open.spotify.com/track/2WcmMJtgzA6SOgL8eysBcU,,medium_term,2026-06-02T21:59:56.757646+00:00,2.67,2024,2020s,Unknown
+5,4kbMhMwfbVtqbqqFEw6y8C,Mokai,JHAYCO,6nVcHLIgY5pE2YCl8ubca1,JHAYCO,Le Clique: Vida Rockstar (X),67JIMv9vCB2ukBdEbtUmUG,2024-09-06,,145866,False,https://open.spotify.com/track/4kbMhMwfbVtqbqqFEw6y8C,,medium_term,2026-06-02T21:59:56.757656+00:00,2.43,2024,2020s,Unknown
+6,4fwKpMyCBWCaj0W45a3emW,DIGITAL15,Yk It’s Junaa,4tgNxPUJKyOY0VkbzJ44iE,Yk It’s Junaa,DIGITAL15,3VSKr1IIgKqteToundEf0e,2025-09-09,,175007,True,https://open.spotify.com/track/4fwKpMyCBWCaj0W45a3emW,,medium_term,2026-06-02T21:59:56.757665+00:00,2.92,2025,2020s,Unknown
+7,2tAwNLAIBtgXdzQOtVq6mL,PIDE,Mora,0Q8NcsJwoCbZOHHW63su5S,"Mora, RaiNao",ESTRELLA,0SoJvPHbKVhvmVJOp3kzp3,2023-08-28,,207903,True,https://open.spotify.com/track/2tAwNLAIBtgXdzQOtVq6mL,,medium_term,2026-06-02T21:59:56.757675+00:00,3.47,2023,2020s,Unknown
+8,1oghNMGW42IhtQPNU6leZz,VAMOaCOCHI,Omar Courtz,3E12tRURRvPfHz0hAMCFYc,Omar Courtz,POR SI MAÑANA NO ESTOY,6A7uWpBb4nHbiBHWRlZi5f,2026-02-19,,199253,True,https://open.spotify.com/track/1oghNMGW42IhtQPNU6leZz,,medium_term,2026-06-02T21:59:56.757683+00:00,3.32,2026,2020s,Unknown
+9,7jnSlMG2jKJmKvAWxufk2I,WHAT U NEED? (SexPlaylist 2),Omar Courtz,3E12tRURRvPfHz0hAMCFYc,"Omar Courtz, Myke Towers",POR SI MAÑANA NO ESTOY,6A7uWpBb4nHbiBHWRlZi5f,2026-02-19,,265833,True,https://open.spotify.com/track/7jnSlMG2jKJmKvAWxufk2I,,medium_term,2026-06-02T21:59:56.757692+00:00,4.43,2026,2020s,Unknown
+10,6DlsjtDtHj75XUzE7HtuY3,DEDICANDOME,Myke Towers,7iK8PXO48WeuP03g8YR51W,Myke Towers,LVEU: VIVE LA TUYA...NO LA MIA,1ZVJTCW5rxpHKNgsNL91J2,2023-09-18,,154081,True,https://open.spotify.com/track/6DlsjtDtHj75XUzE7HtuY3,,medium_term,2026-06-02T21:59:56.757701+00:00,2.57,2023,2020s,Unknown
+11,3vqxapus26imChRaRh51T9,Habibi,JHAYCO,6nVcHLIgY5pE2YCl8ubca1,JHAYCO,Le Clique: Vida Rockstar (X),67JIMv9vCB2ukBdEbtUmUG,2024-09-06,,166053,False,https://open.spotify.com/track/3vqxapus26imChRaRh51T9,,medium_term,2026-06-02T21:59:56.757709+00:00,2.77,2024,2020s,Unknown
+12,1tz7RZirwiuaJw2p0jbdHb,KOKO,Omar Courtz,3E12tRURRvPfHz0hAMCFYc,Omar Courtz,POR SI MAÑANA NO ESTOY,6A7uWpBb4nHbiBHWRlZi5f,2026-02-19,,195146,True,https://open.spotify.com/track/1tz7RZirwiuaJw2p0jbdHb,,medium_term,2026-06-02T21:59:56.757719+00:00,3.25,2026,2020s,Unknown
+13,4FEPcLJAyz0MI5J20Y5Y3C,SWAGGER,Luis Brown,1f7FtdbdaRjeeOr0gK9f3L,Luis Brown,THREESOME,7v2dlsw6aEXnHheR8dP1Sy,2026-03-19,,124866,True,https://open.spotify.com/track/4FEPcLJAyz0MI5J20Y5Y3C,,medium_term,2026-06-02T21:59:56.757728+00:00,2.08,2026,2020s,Unknown
+14,0RyZNWHp2DmSVO2H5nVWzs,FRESHSTYLE,Loui Santana,6QoAK6MFPyiqmoTdFTsjlh,Loui Santana,58,0MP2I47Rf2iuBeB1eHnvSO,2020-04-30,,101711,True,https://open.spotify.com/track/0RyZNWHp2DmSVO2H5nVWzs,,medium_term,2026-06-02T21:59:56.757737+00:00,1.7,2020,2020s,Unknown
+15,0kxfIsZDGSfAAdqD35YonF,YOU KNOW IT'S LOVEE,Yk It’s Junaa,4tgNxPUJKyOY0VkbzJ44iE,"Yk It’s Junaa, Myke Towers",YOU KNOW IT'S LOVEE,5ryAwuDL8fJt5BbA4bv4bx,2026-01-30,,171612,False,https://open.spotify.com/track/0kxfIsZDGSfAAdqD35YonF,,medium_term,2026-06-02T21:59:56.757748+00:00,2.86,2026,2020s,Unknown
+16,6OoYmAP9oZtBiSomWpDTWP,L a k e n o s h i,Omar Courtz,3E12tRURRvPfHz0hAMCFYc,Omar Courtz,POR SI MAÑANA NO ESTOY,6A7uWpBb4nHbiBHWRlZi5f,2026-02-19,,207533,True,https://open.spotify.com/track/6OoYmAP9oZtBiSomWpDTWP,,medium_term,2026-06-02T21:59:56.757769+00:00,3.46,2026,2020s,Unknown
+17,3Rh4hPOaCCk98ktQIlnmDT,CUARTO TEMA,Loui Santana,6QoAK6MFPyiqmoTdFTsjlh,Loui Santana,58,0MP2I47Rf2iuBeB1eHnvSO,2020-04-30,,168000,True,https://open.spotify.com/track/3Rh4hPOaCCk98ktQIlnmDT,,medium_term,2026-06-02T21:59:56.757778+00:00,2.8,2020,2020s,Unknown
+18,6CoFGVlVpsVpWaUqK5xKTr,XX,JHAYCO,6nVcHLIgY5pE2YCl8ubca1,JHAYCO,Le Clique: Vida Rockstar (X),67JIMv9vCB2ukBdEbtUmUG,2024-09-06,,265320,False,https://open.spotify.com/track/6CoFGVlVpsVpWaUqK5xKTr,,medium_term,2026-06-02T21:59:56.757788+00:00,4.42,2024,2020s,Unknown
+19,09tYvFOFp1pKxZ8GJVlOXm,Como Se Siente,JHAYCO,6nVcHLIgY5pE2YCl8ubca1,JHAYCO,Famouz Reloaded,7gDjowB5fv1LkntmDVv0jT,2020-01-24,,219640,False,https://open.spotify.com/track/09tYvFOFp1pKxZ8GJVlOXm,,medium_term,2026-06-02T21:59:56.757795+00:00,3.66,2020,2020s,Unknown
+20,6XjsXIb1DUhsmhflFAODv3,DIAMONDS,Mora,0Q8NcsJwoCbZOHHW63su5S,"Mora, Dei V",ESTRELLA,0SoJvPHbKVhvmVJOp3kzp3,2023-08-28,,193367,True,https://open.spotify.com/track/6XjsXIb1DUhsmhflFAODv3,,medium_term,2026-06-02T21:59:56.757805+00:00,3.22,2023,2020s,Unknown
+21,3xltAYY9fbM1v9DUY2LFdt,WoW,Yk It’s Junaa,4tgNxPUJKyOY0VkbzJ44iE,Yk It’s Junaa,Huracan,5NVEOZ9m86QvE7Kub643vM,2025-03-26,,158963,True,https://open.spotify.com/track/3xltAYY9fbM1v9DUY2LFdt,,medium_term,2026-06-02T21:59:56.757813+00:00,2.65,2025,2020s,Unknown
+22,7l2nxyx7IkBX5orhkALg0V,Privileged Rappers,Drake,3TVXtAsR1Inumwj472S9r4,"Drake, 21 Savage",Her Loss,5MS3MvWHJ3lOZPLiMxzOU6,2022-11-04,,160821,True,https://open.spotify.com/track/7l2nxyx7IkBX5orhkALg0V,,medium_term,2026-06-02T21:59:56.757822+00:00,2.68,2022,2020s,Unknown
+23,4z46E3coZuv7TeGawEd4Ze,Juguete,Yan Block,6TKygPpVT29oGUogu4J9Ec,"Yan Block, NTG, SAIKO, SHB",Juguete,6I7lY45BATN3V19Kqlhmnv,2024-10-31,,203265,True,https://open.spotify.com/track/4z46E3coZuv7TeGawEd4Ze,,medium_term,2026-06-02T21:59:56.757831+00:00,3.39,2024,2020s,Unknown
+24,6a6KQIRuv9X3qK9IG65QTe,Enzaciao,Clarent,78F6Xkd46aMHkr4AP60TXY,Clarent,Enzaciao,0gCoMEl1gg2vJIt3IjkxtZ,2023-09-21,,133172,True,https://open.spotify.com/track/6a6KQIRuv9X3qK9IG65QTe,,medium_term,2026-06-02T21:59:56.757839+00:00,2.22,2023,2020s,Unknown
+25,4in4IMI3h8LIwawCha3JAv,SCORPIO,JHAYCO,6nVcHLIgY5pE2YCl8ubca1,JHAYCO,SCORPIO,63lPDlkhYUJdGIfInXAosy,2025-10-10,,227956,False,https://open.spotify.com/track/4in4IMI3h8LIwawCha3JAv,,medium_term,2026-06-02T21:59:56.757848+00:00,3.8,2025,2020s,Unknown
+26,3UZQFk3N3ghIAMcHTrJQ9l,Corintios 13:12,Cruz Cafuné,0jeYkqwckGJoHQhhXwgzk3,"Cruz Cafuné, Westside Gunn",Me Muevo Con Dios,7yvmtCjHcBe9DqIVl7AwQT,2023-05-25,,188000,True,https://open.spotify.com/track/3UZQFk3N3ghIAMcHTrJQ9l,,medium_term,2026-06-02T21:59:56.757857+00:00,3.13,2023,2020s,Unknown
+27,1YAWMfsmduIrpqrjP45pFn,FOREVER TU GANTEL,Omar Courtz,3E12tRURRvPfHz0hAMCFYc,"Omar Courtz, Ñengo Flow",POR SI MAÑANA NO ESTOY,6A7uWpBb4nHbiBHWRlZi5f,2026-02-19,,226533,True,https://open.spotify.com/track/1YAWMfsmduIrpqrjP45pFn,,medium_term,2026-06-02T21:59:56.757866+00:00,3.78,2026,2020s,Unknown
+28,0s46GIj1A91MAYU7bvFRms,Bimini,Loui Santana,6QoAK6MFPyiqmoTdFTsjlh,Loui Santana,Bimini,7MYffcsuDHT3tYza7tQsSV,2020-09-01,,192052,False,https://open.spotify.com/track/0s46GIj1A91MAYU7bvFRms,,medium_term,2026-06-02T21:59:56.757874+00:00,3.2,2020,2020s,Unknown
+29,5erXVUirf9qivKY5sJOanE,EL NENE,Anuel AA,2R21vXR83lH98kGeO99Y66,"Anuel AA, Foreign Teck",LLNM2,6DJslQtfD7mGFGZpfiyrVf,2022-12-09,,179999,True,https://open.spotify.com/track/5erXVUirf9qivKY5sJOanE,,medium_term,2026-06-02T21:59:56.757883+00:00,3.0,2022,2020s,Unknown
+30,70ZseeIArlyha456a9KZss,Rai Nao,Kris Floyd,7aG8YUI5alfF2pi0n5Cg5H,Kris Floyd,En Lo Que Vuelvo (Mixtape),7D0o5zdQSlzpDzqGcOE4ow,2024-06-12,,119833,True,https://open.spotify.com/track/70ZseeIArlyha456a9KZss,,medium_term,2026-06-02T21:59:56.757891+00:00,2.0,2024,2020s,Unknown
+31,5CC6oa7yIJos5mhuRDpeqE,Una Peluchita,Ronny GTA,4cnOWlaCqpRNGiLvsxgKgu,"Ronny GTA, PJ Prod",GTA NAMA,5RIqQohaskVEkklzaUb27v,2025-11-18,,137739,True,https://open.spotify.com/track/5CC6oa7yIJos5mhuRDpeqE,,medium_term,2026-06-02T21:59:56.757900+00:00,2.3,2025,2020s,Unknown
+32,7xDBtwxsife3u8luqSbSPR,NO ME SUELTES,Rauw Alejandro,1mcTU81TzQhprhouKaTkpq,Rauw Alejandro,SATURNO,5AcRssiG0Zqu3lqYW7hMoM,2023-01-24,,162857,True,https://open.spotify.com/track/7xDBtwxsife3u8luqSbSPR,,medium_term,2026-06-02T21:59:56.757914+00:00,2.71,2023,2020s,Unknown
+33,1CCs6wflgQL9kdWoALlkig,Nomada,Loui Santana,6QoAK6MFPyiqmoTdFTsjlh,Loui Santana,Nomada,27MuigzmmY5jZw0FdN9gFj,2021-02-19,,165500,False,https://open.spotify.com/track/1CCs6wflgQL9kdWoALlkig,,medium_term,2026-06-02T21:59:56.757923+00:00,2.76,2021,2020s,Unknown
+34,4yWrEuYXr9YB1nHbuPxfUU,Scat Pack,Clarent,78F6Xkd46aMHkr4AP60TXY,"Clarent, Omar Courtz",No vuelve a suceder (calentamiento pre álbum),13w7ZVbjnSHgp6xEER3KJB,2026-01-08,,253658,True,https://open.spotify.com/track/4yWrEuYXr9YB1nHbuPxfUU,,medium_term,2026-06-02T21:59:56.757931+00:00,4.23,2026,2020s,Unknown
+35,5kp2Lc7zL9znAoU9XTm1l1,MAREA,Mora,0Q8NcsJwoCbZOHHW63su5S,Mora,ESTRELLA,0SoJvPHbKVhvmVJOp3kzp3,2023-08-28,,148082,True,https://open.spotify.com/track/5kp2Lc7zL9znAoU9XTm1l1,,medium_term,2026-06-02T21:59:56.757939+00:00,2.47,2023,2020s,Unknown
+36,24UGLsGfKHgQhGviBrbDdl,Hielo,Eladio Carrion,5XJDexmWFLWOkjOEjOVX3e,"Eladio Carrion, JHAYCO",Sauce Boyz,2JwUsV3QP7FMWx1Fzt6dHQ,2020-01-31,,191164,True,https://open.spotify.com/track/24UGLsGfKHgQhGviBrbDdl,,medium_term,2026-06-02T21:59:56.757948+00:00,3.19,2020,2020s,Unknown
+37,3L9vejLQUk0AGRTwnmMB16,OTL,Loui Santana,6QoAK6MFPyiqmoTdFTsjlh,Loui Santana,58,0MP2I47Rf2iuBeB1eHnvSO,2020-04-30,,154680,True,https://open.spotify.com/track/3L9vejLQUk0AGRTwnmMB16,,medium_term,2026-06-02T21:59:56.757957+00:00,2.58,2020,2020s,Unknown
+38,6pJj7JbS6TXCZW19BzXot6,SUERTE,Yan Block,6TKygPpVT29oGUogu4J9Ec,"Yan Block, RaiNao, Slow Jamz",SUERTE,7mCiwgVTJt0k8QeLp2Q5rz,2025-07-03,,193654,True,https://open.spotify.com/track/6pJj7JbS6TXCZW19BzXot6,,medium_term,2026-06-02T21:59:56.757966+00:00,3.23,2025,2020s,Unknown
+39,0w0e3Te2Rd4t8gGKi3sU6a,Vacile,Yan Block,6TKygPpVT29oGUogu4J9Ec,Yan Block,Vacile,1h5pFnX1pTSIhDnouQsn4G,2022-09-30,,140239,True,https://open.spotify.com/track/0w0e3Te2Rd4t8gGKi3sU6a,,medium_term,2026-06-02T21:59:56.757974+00:00,2.34,2022,2020s,Unknown
+40,5LlqSCrhvYm97QwfhmY7tc,Desaparecer,Mora,0Q8NcsJwoCbZOHHW63su5S,Mora,Primer Dia de Clases,5r8T7S23cVDSd7a045h4N5,2021-02-05,,165973,True,https://open.spotify.com/track/5LlqSCrhvYm97QwfhmY7tc,,medium_term,2026-06-02T21:59:56.757981+00:00,2.77,2021,2020s,Unknown
+41,6LTAuBhj4syU9ynzdBBK7r,Icónica,AERYS,2ZUzdN0qkNOMOF0BYZARvV,"AERYS, Loui Santana",Icónica,09gkuavwL6btx89NwlZ9Rg,2021-03-19,,195204,True,https://open.spotify.com/track/6LTAuBhj4syU9ynzdBBK7r,,medium_term,2026-06-02T21:59:56.757991+00:00,3.25,2021,2020s,Unknown
+42,7dlFn4xJYAg8hdp9mdz9Zr,Esa Cruz,Anuel AA,2R21vXR83lH98kGeO99Y66,Anuel AA,Las Leyendas Nunca Mueren,4MTtBjQEt7i752hISXjKqA,2021-11-26,,164096,True,https://open.spotify.com/track/7dlFn4xJYAg8hdp9mdz9Zr,,medium_term,2026-06-02T21:59:56.757999+00:00,2.73,2021,2020s,Unknown
+43,2FabnqpCzc59bbFo5kw4IF,Touch Your Body,Eladio Carrion,5XJDexmWFLWOkjOEjOVX3e,Eladio Carrion,Sauce Boyz 2,4JaYe7HIddzNaF3rUgJzHI,2021-12-02,,147692,True,https://open.spotify.com/track/2FabnqpCzc59bbFo5kw4IF,,medium_term,2026-06-02T21:59:56.758007+00:00,2.46,2021,2020s,Unknown
+44,4RhPikdazBZyoLEXWAEmSI,Lately,Luar La L,4axKuDPr6WKcDCyh8vueTY,Luar La L,Lately,3A3qusTOsK8Khd1xlTqjLR,2022-11-17,,184072,True,https://open.spotify.com/track/4RhPikdazBZyoLEXWAEmSI,,medium_term,2026-06-02T21:59:56.758015+00:00,3.07,2022,2020s,Unknown
+45,7CGUgOBXrfaXXvY73GzOXE,UNA BABY EN SANTIAGO,Lil Naay,3hfWiirwdO1ijoZQwj7uzZ,Lil Naay,THE MVP OF THE YEAR,1NDIUPPPe1e55wi9JTnEfY,2025-12-25,,165738,True,https://open.spotify.com/track/7CGUgOBXrfaXXvY73GzOXE,,medium_term,2026-06-02T21:59:56.758025+00:00,2.76,2025,2020s,Unknown
+46,54iyLNmcnLWNdCqX5pdtuL,Friends - Remix,Eladio Carrion,5XJDexmWFLWOkjOEjOVX3e,"Eladio Carrion, Lil Tjay, Luar La L",3MEN2 KBRN,6BGN5CVd7koJApotl5Bj8u,2023-03-17,,248622,True,https://open.spotify.com/track/54iyLNmcnLWNdCqX5pdtuL,,medium_term,2026-06-02T21:59:56.758034+00:00,4.14,2023,2020s,Unknown
+47,0h54mLixODOqU6vTcZMqVM,WO OH OH,Omar Courtz,3E12tRURRvPfHz0hAMCFYc,"Omar Courtz, ROA",POR SI MAÑANA NO ESTOY,6A7uWpBb4nHbiBHWRlZi5f,2026-02-19,,269596,True,https://open.spotify.com/track/0h54mLixODOqU6vTcZMqVM,,medium_term,2026-06-02T21:59:56.758043+00:00,4.49,2026,2020s,Unknown
+48,514joG57v4yKTsfQmz7stz,Janice STFU,Drake,3TVXtAsR1Inumwj472S9r4,Drake,ICEMAN,0OAv7DCME2AV4q1KPO95HY,2026-05-15,,237344,True,https://open.spotify.com/track/514joG57v4yKTsfQmz7stz,,medium_term,2026-06-02T21:59:56.758050+00:00,3.96,2026,2020s,Unknown
+49,5oJA5EvbxaBPbum2FX11MC,Rumores,Ronny GTA,4cnOWlaCqpRNGiLvsxgKgu,"Ronny GTA, Megadivo Produce",GTA NAMA,5RIqQohaskVEkklzaUb27v,2025-11-18,,97113,True,https://open.spotify.com/track/5oJA5EvbxaBPbum2FX11MC,,medium_term,2026-06-02T21:59:56.758059+00:00,1.62,2025,2020s,Unknown
+50,4KDVAhmcD0b9Kgo4GHUBZA,EMRATA,Myke Towers,7iK8PXO48WeuP03g8YR51W,Myke Towers,LVEU: VIVE LA TUYA...NO LA MIA,1ZVJTCW5rxpHKNgsNL91J2,2023-09-18,,225507,True,https://open.spotify.com/track/4KDVAhmcD0b9Kgo4GHUBZA,,medium_term,2026-06-02T21:59:56.758068+00:00,3.76,2023,2020s,Unknown
