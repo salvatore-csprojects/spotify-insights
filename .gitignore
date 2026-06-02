@@ -49,3 +49,4 @@ notebooks/.ipynb_checkpoints/
 .coverage
 htmlcov/
 .pytest_cache/
+.claude/
