@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="assets/banner.png" alt="Spotify Insights Banner" width="100%"/>
-
 # 🎵 Spotify Insights
 
 ### Personal Music Intelligence Platform
@@ -15,14 +13,17 @@
 
 **Spotify Insights** is a full-stack personal analytics platform that transforms raw Spotify listening data into a premium, interactive intelligence dashboard — think Spotify Wrapped, but available 365 days a year, with deeper analytics you actually control.
 
-[**Coming Soon — Streamlit Cloud**](#)
+[**Live Demo — Streamlit Cloud**](#)
 
 </div>
 
 ---
 
 ## 📸 Dashboard Preview
-> Screenshots coming soon. Run locally with `streamlit run streamlit_app/app.py` to see the full dashboard.
+
+![Dashboard Overview](assets/dashboard_overview.png)
+
+> Run locally: `streamlit run streamlit_app/app.py`
 
 ---
 
@@ -50,7 +51,7 @@
 ### 🔌 Data Engineering
 - Modular ETL pipeline with configurable time ranges
 - `@st.cache_data` + disk-based caching to minimize API calls
-- Schema validation via Pydantic on all API responses
+- Pydantic-validated app configuration (env-driven, type-safe)
 - Structured logging with rotation
 - Rate-limit aware Spotify API client
 
@@ -65,52 +66,40 @@ spotify-insights/
 │   ├── api/
 │   │   ├── client.py          # Authenticated Spotipy client with retry logic
 │   │   ├── extract.py         # Top tracks, audio features, genres, recently played
-│   │   └── schemas.py         # Pydantic models for API response validation
+│   │   └── spotify_client.py  # OAuth flow and session management
 │   │
 │   ├── processing/
 │   │   ├── cleaning.py        # Dedup, type casting, null handling
-│   │   ├── enrichment.py      # Genre inference, popularity bucketing, era tagging
-│   │   └── validation.py      # Post-processing data quality checks
+│   │   └── transformations.py # Popularity bucketing, era tagging, enrichment
 │   │
 │   ├── analytics/
-│   │   ├── kpis.py            # Core metric calculations
+│   │   ├── kpis.py            # Core metric calculations (HHI, entropy, archetypes)
 │   │   ├── insights.py        # Narrative engine — generates text insights
-│   │   ├── audio_features.py  # Audio feature analysis and scoring
 │   │   ├── evolution.py       # Taste drift detection across time ranges
-│   │   └── diversity.py       # Entropy-based diversity scoring
+│   │   └── metrics.py         # Supporting metric helpers
+│   │
+│   ├── visualizations/
+│   │   └── charts.py          # Plotly chart factory functions
 │   │
 │   └── utils/
 │       ├── logger.py          # Structured logging setup
-│       └── cache.py           # Disk + memory caching utilities
+│       └── helpers.py         # Shared utility functions
 │
 ├── streamlit_app/
-│   ├── app.py                 # Main entry point, page config, auth gate
-│   ├── components/
-│   │   ├── kpi_cards.py       # Premium metric card components
-│   │   ├── charts.py          # All chart factory functions
-│   │   └── insights_panel.py  # Narrative insight display
-│   └── pages/
-│       ├── 1_Overview.py      # KPI summary + Wrapped-style hero
-│       ├── 2_Deep_Dive.py     # Artist + track drilldowns
-│       ├── 3_Audio_Lab.py     # Audio feature analysis
-│       ├── 4_Evolution.py     # Taste over time
-│       └── 5_Discover.py      # Recommendations + hidden gems
+│   └── app.py                 # Multi-page dashboard (overview, drilldowns, audio lab)
 │
 ├── config/
 │   ├── settings.py            # Env-driven config (Pydantic BaseSettings)
 │   └── constants.py           # Feature lists, thresholds, color maps
 │
 ├── data/
-│   ├── raw/                   # Unprocessed API responses (JSON + CSV)
-│   └── processed/             # Cleaned, enriched, analysis-ready CSVs
+│   ├── raw/                   # Unprocessed API responses (CSV)
+│   └── processed/             # Cleaned, analysis-ready CSVs
 │
 ├── tests/
 │   ├── test_kpis.py
 │   ├── test_insights.py
-│   └── test_api_client.py
-│
-├── notebooks/
-│   └── exploration.ipynb      # EDA and feature development notebook
+│   └── test_cleaning.py
 │
 ├── .streamlit/
 │   └── config.toml            # Theme: dark mode, Spotify color palette
@@ -188,7 +177,7 @@ concentration = HHI  # lower = more eclectic
 ```
 
 ### Mood Archetype
-K-means clustering on normalized audio features [valence, energy, danceability, acousticness]:
+Rule-based classification on mean valence + energy across the listening window:
 ```
 High valence + high energy  → "Euphoria Mode"
 Low valence + high energy   → "Dark Intensity"
@@ -210,16 +199,17 @@ pytest tests/ -v --cov=src --cov-report=term-missing
 
 ### Streamlit Cloud (recommended for portfolio)
 
+The app ships with sample processed data, so the dashboard works **without Spotify credentials** — visitors can explore it immediately.
+
 1. Push to GitHub
 2. Go to [share.streamlit.io](https://share.streamlit.io)
-3. Connect repo, set `streamlit_app/app.py` as entry point
-4. Add secrets in the Streamlit Cloud dashboard (same keys as `.env`)
+3. Connect repo → set `streamlit_app/app.py` as entry point
+4. Deploy (no secrets needed for demo mode)
 
-### Docker
-
-```bash
-docker build -t spotify-insights .
-docker run -p 8501:8501 --env-file .env spotify-insights
+**Optional — live data mode:** Add your own credentials in the Streamlit Cloud Secrets panel:
+```toml
+SPOTIFY_CLIENT_ID = "your_client_id"
+SPOTIFY_CLIENT_SECRET = "your_client_secret"
 ```
 
 ---
@@ -250,7 +240,7 @@ docker run -p 8501:8501 --env-file .env spotify-insights
 
 ## 🤝 Contributing
 
-PRs welcome. Please open an issue first for major changes. See [CONTRIBUTING.md](CONTRIBUTING.md).
+PRs welcome. Please open an issue first for major changes.
 
 ---
 

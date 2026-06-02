@@ -1,0 +1,14 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "spotify-insights",
+      "runtimeExecutable": "/opt/homebrew/bin/python3.14",
+      "runtimeArgs": ["-m", "streamlit", "run", "streamlit_app/app.py", "--server.port", "8502", "--server.headless", "true"],
+      "port": 8502,
+      "env": {
+        "PYTHONPATH": "/Users/salva/Desktop/data-projects/spotify-insights-v2/venv/lib/python3.14/site-packages"
+      }
+    }
+  ]
+}
