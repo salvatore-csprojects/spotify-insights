@@ -15,19 +15,14 @@
 
 **Spotify Insights** is a full-stack personal analytics platform that transforms raw Spotify listening data into a premium, interactive intelligence dashboard — think Spotify Wrapped, but available 365 days a year, with deeper analytics you actually control.
 
-[**Live Demo**](https://spotify-insights-demo.streamlit.app) · [**Architecture Docs**](docs/ARCHITECTURE.md) · [**API Reference**](docs/API.md)
+[**Coming Soon — Streamlit Cloud**](#)
 
 </div>
 
 ---
 
 ## 📸 Dashboard Preview
-
-> _Insert 3–4 screenshots here using the layout below_
-
-| Overview | Listening Evolution | Artist DNA | Audio Intelligence |
-|----------|-------------------|------------|-------------------|
-| ![overview](assets/screenshots/overview.png) | ![evolution](assets/screenshots/evolution.png) | ![dna](assets/screenshots/dna.png) | ![audio](assets/screenshots/audio.png) |
+> Screenshots coming soon. Run locally with `streamlit run streamlit_app/app.py` to see the full dashboard.
 
 ---
 
@@ -133,7 +128,7 @@ spotify-insights/
 ### 1. Clone & install
 
 ```bash
-git clone https://github.com/yourname/spotify-insights.git
+git clone https://github.com/salvatore-csprojects/spotify-insights.git
 cd spotify-insights
 python -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
@@ -261,6 +256,6 @@ PRs welcome. Please open an issue first for major changes. See [CONTRIBUTING.md]
 
 <div align="center">
 
-Built with 🎧 by [Your Name](https://github.com/yourname) · Not affiliated with Spotify AB
+Built with 🎧 by [Salvatore](https://github.com/salvatore-csprojects) · Not affiliated with Spotify AB
 
 </div>
