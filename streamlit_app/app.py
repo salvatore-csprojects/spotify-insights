@@ -470,7 +470,7 @@ with tab1:
                 y="artist",
                 orientation="h",
                 color="track_count",
-                color_continuous_scale=["#1a1a1a", "#1DB954"],
+                color_continuous_scale=[[0, "#1a1a1a"], [1, "#1DB954"]],
                 template=PLOTLY_TEMPLATE,
             )
             fig.update_layout(
@@ -530,7 +530,7 @@ with tab1:
                     genre_df = pd.DataFrame(top_genres, columns=["genre", "count"])
                     fig_g = px.bar(
                         genre_df, x="count", y="genre", orientation="h",
-                        color="count", color_continuous_scale=["#1a1a1a", "#1DB954"],
+                        color="count", color_continuous_scale=[[0, "#1a1a1a"], [1, "#1DB954"]],
                         template=PLOTLY_TEMPLATE,
                     )
                     fig_g.update_layout(
