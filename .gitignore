@@ -21,9 +21,8 @@ env/
 .spotify_token_cache
 *.cache
 
-# Data files — too large / personal
+# Data files — raw only (processed sample data is committed for demo)
 data/raw/
-data/processed/
 
 # Logs
 logs/
